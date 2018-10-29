@@ -1,0 +1,20 @@
+# https://docs.djangoproject.com/en/2.0/intro/contributing/
+sudo apt-get install python3-pip
+# Prefix the next command with sudo if it gives a permission denied error
+pip3 install virtualenv
+virtualenv --python=`which python3` ~/.virtualenvs/djangodev
+# https://docs.djangoproject.com/en/2.0/intro/tutorial01/
+virtualenv ~/.virtualenvs/django_test
+source ~/.virtualenvs/django_test/bin/activate
+pip install Django
+django-admin startproject django_test
+python manage.py runserver
+
+# DB configuration
+python manage.py makemigrations polls
+python manage.py migrate
+
+# User management
+python manage.py createsuperuser
+
+python -m pip install -U matplotlib
